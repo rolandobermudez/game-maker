@@ -15,6 +15,12 @@ function n_get_cognito_credentials() {
     return undefined;
 }
 
-function n_set_cognito_credentials(credentials) {
-    window.cognito['credentials'] = credentials;
+function n_set_cognito_credentials(key, secret, session) {
+    window.cognito['credentials'] = {
+        key: key,
+        secret: secret,
+        session: session
+    };
+
+    return "SUCCESS";
 }
