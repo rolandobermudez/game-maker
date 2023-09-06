@@ -22,5 +22,7 @@ function n_set_cognito_credentials(key, secret, session) {
         session: session
     };
 
+    room_goto_next();
+    
     return "SUCCESS";
 }
