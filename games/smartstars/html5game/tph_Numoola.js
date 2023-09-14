@@ -8,6 +8,13 @@ function n_request_cognito_credentials() {
     }
 }
 
+function n_quit_game() {
+    if (window.webkit !== undefined && window.webkit.messageHandlers !== undefined) {
+        // initialize cognito via a bridge
+        window.webkit.messageHandlers.bridge.postMessage("QUIT");
+    }
+}
+
 function n_set_cognito_credentials(key, secret, session) {
     window.cognito['credentials'] = {
         key: key,
